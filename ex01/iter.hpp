@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstddef>
+#include <string>
 
 template <typename T, typename F>
 void iter(T *ar, size_t len, F fnct)

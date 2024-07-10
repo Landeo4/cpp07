@@ -7,7 +7,7 @@ void print(std::string s)
 
 int main()
 {
-	std::string str = "coucou";
-	int len = str.size();
+	std::string str[] = {"coucou"};
+	int len = sizeof(str) / sizeof(str[0]);
 	iter(str, len, print);
 }
