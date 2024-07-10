@@ -1,29 +1,5 @@
 #include "Whatever.hpp"
 
-void swap(T a, T b){
-    T c = b;
-    b = a;
-    a = c;
-}
-
-T min(T a, T b){
-    if (a > b)
-        return (b);
-    else if (b > a)
-        return (a);
-    else
-        return (b);
-}
-
-T max(T a, T b){
-    if (b > a)
-        return (a);
-    else if (a > b)
-        return (b);
-    else
-        return (b);
-}
-
 int main( void ) 
 {
     int a = 2;
