@@ -1,13 +1,24 @@
-#include <iostream>
 #include "Array.hpp"
 
 #define MAX_VAL 750
 
 int main()
 {
-    int *a = new int();
-
-    std::cout << a << std::endl;
+    Array<int> nb(10);
+    Array<int> bn(10);
+    for (int i = 0; i < 10; i++)
+    {
+        nb = rand();
+        bn = rand();
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        if (nb[i] != bn[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
 }
 
 // int main(int, char**)
