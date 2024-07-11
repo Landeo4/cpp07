@@ -13,6 +13,7 @@ class Array
 	Array &operator(const Array & copy)
 	~Array();
 
+	int size();
 	private:
 	Array _ar;
 };

@@ -25,3 +25,9 @@ Array Array::&operator(const Array & copy)
 	this->_ar = copy->_ar;
 	return this;
 }
+
+int Aray::size()
+{
+	for (int i = 0; this->_ar[i]; i++)
+	return (i);
+}
