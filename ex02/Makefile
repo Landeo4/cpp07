@@ -1,9 +1,11 @@
 NAME	=	Array
 
 SRCS	=	main.cpp \
-			Array.tpp \
+			Array.cpp \
 
-OBJS= $(SRCS:.cpp=.o) $(SRCS:.tpp=.o)
+OBJS = $(SRCS:.cpp=.o)
+
+# OBJS= $(SRCS:.cpp=.o)
 
 CC		=	c++
 

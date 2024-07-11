@@ -20,7 +20,7 @@ Array::Array(const Array & copy)
 	*this = copy;
 }
 
-Array Array::&operator(const Array & copy)
+Array &Array::operator=(const Array & copy)
 {
 	this->_ar = copy->_ar;
 	return this;

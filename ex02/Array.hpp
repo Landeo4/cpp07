@@ -10,7 +10,7 @@ class Array
 	Array();
 	Array(unsigned int n);
 	Array(const Array & copy);
-	Array &operator(const Array & copy)
+	Array &operator=(const Array & copy);
 	~Array();
 
 	int size();
