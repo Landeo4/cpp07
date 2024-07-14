@@ -39,10 +39,11 @@ int Array<T>::size()
 }
 
 template<typename T>
-Array<T> &Array<T>::operator[](int idx)
+T &Array<T>::operator[](int idx)
 {
 	return (this->_ar[idx]);
 }
+// l'element doit return un T car c'est le type du tableau
 
 template<typename T>
 Array<T> &Array<T>::operator!=(const Array & lhs)
