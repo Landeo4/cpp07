@@ -19,7 +19,7 @@ class Array
 		public:
 		const char * what() const throw()
 		{
-			return ("the idx is too high");
+			return ("the idx is wrong");
 		}
 	};
 
@@ -29,7 +29,7 @@ class Array
 	int size();
 	private:
 	T 		*_ar;
-	size_t 	_size;
+	int 	_size;
 };
 
 #include "Array.hpp"
@@ -38,12 +38,13 @@ template<typename T>
 Array<T>::Array()
 {
 	T *_ar = new T;
+	_size = 0;
 }
 
 template<typename T>
 Array<T>::~Array()
 {
-	delete _ar;
+	// delete _ar;
 }
 
 template<typename T>
@@ -80,11 +81,10 @@ int Array<T>::size()
 template<typename T>
 T &Array<T>::operator[](int idx)
 {
-	if (idx >= size())
+	if (idx >= this->_size)
 		throw IdxTooHigh();
 	return _ar[idx];
 }
-// l'element doit return un T car c'est le type du tableau
 
 template<typename T>
 Array<T> &Array<T>::operator!=(const Array & lhs)

@@ -21,6 +21,8 @@
 //     }
 // }
 
+// Tip: Try to compile int * a = new int(); then display *a.
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -68,6 +70,7 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+	std::cout << "program finis" << std::endl;
     return 0;
 }
 
