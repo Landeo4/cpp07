@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <exception>
 
 template< typename T>
 class Array
@@ -13,8 +14,17 @@ class Array
 	Array &operator=(const Array & copy);
 	~Array();
 
+	class IdxTooHigh : public std::exception
+	{
+		public:
+		const char * what() const throw()
+		{
+			return ("the idx is too high");
+		}
+	};
+
 	Array(unsigned int n);
-	Array &operator[](int idx);
+	T &operator[](int idx);
 	Array &operator!=(const Array & lhs);
 	int size();
 	private:

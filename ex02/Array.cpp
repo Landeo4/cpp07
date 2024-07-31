@@ -9,7 +9,7 @@ Array<T>::Array()
 template<typename T>
 Array<T>::~Array()
 {
-
+	delete _ar;
 }
 
 template<typename T>
@@ -39,11 +39,11 @@ int Array<T>::size()
 }
 
 template<typename T>
-Array<T> &Array<T>::operator[](int idx)
+T &Array<T>::operator[](int idx)
 {
-	// if (idx > size())
-		// throw
-	return (this->_ar[idx]);
+	if (idx >= size())
+		throw IdxTooHigh();
+	return _ar[idx];
 }
 // l'element doit return un T car c'est le type du tableau
 
