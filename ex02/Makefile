@@ -1,11 +1,9 @@
-NAME	=	Array
+NAME	=	Iter
 
 SRCS	=	main.cpp \
-			Array.cpp \
+			Array.cpp
 
-OBJS = $(SRCS:.cpp=.o)
-
-# OBJS= $(SRCS:.cpp=.o)
+OBJS= $(SRCS:.cpp=.o)
 
 CC		=	c++
 
