@@ -2,25 +2,6 @@
 
 #define MAX_VAL 750
 
-// int main()
-// {
-//     Array<int> nb(10);
-//     Array<int> bn(10);
-//     for (int i = 0; i < 10; i++)
-//     {
-//         nb = rand();
-//         bn = nb;
-//     }
-//     for (int i = 0; i < 10; i++)
-//     {
-//         if (nb[i] != bn[i])
-//         {
-//             std::cerr << "didn't save the same value!!" << std::endl;
-//             return 1;
-//         }
-//     }
-// }
-
 // Tip: Try to compile int * a = new int(); then display *a.
 
 int main(int, char**)
@@ -34,7 +15,6 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
@@ -69,8 +49,7 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
-	std::cout << "program finis" << std::endl;
+    delete [] mirror;
     return 0;
 }
 

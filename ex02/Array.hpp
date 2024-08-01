@@ -32,19 +32,16 @@ class Array
 	int 	_size;
 };
 
-#include "Array.hpp"
-
 template<typename T>
-Array<T>::Array()
+Array<T>::Array() : _ar(new T[0]()), _size(0)
 {
-	T *_ar = new T;
-	_size = 0;
+
 }
 
 template<typename T>
 Array<T>::~Array()
 {
-	// delete _ar;
+	delete [] _ar;
 }
 
 template<typename T>
@@ -54,7 +51,7 @@ Array<T>::Array(unsigned int n) : _ar(new T[n]()) , _size(n)
 }
 
 template<typename T>
-Array<T>::Array(const Array & copy)
+Array<T>::Array(const Array & copy) : _ar(0), _size(0)
 {
 	*this = copy;
 }
@@ -64,8 +61,11 @@ Array<T> &Array<T>::operator=(const Array & copy)
 {
 	if (&copy != this)
 	{
-		this->_ar = copy._ar;
-		this->_size = copy._size;
+		delete [] _ar;
+		_size = copy._size;
+		_ar = new T[_size];
+		for (int i = 0; i < _size; i++)
+			_ar[i] = copy._ar[i];
 	}
 	return *this;
 }
@@ -81,7 +81,7 @@ int Array<T>::size()
 template<typename T>
 T &Array<T>::operator[](int idx)
 {
-	if (idx >= this->_size)
+	if (idx >= this->_size || idx < 0)
 		throw IdxTooHigh();
 	return _ar[idx];
 }
@@ -89,7 +89,12 @@ T &Array<T>::operator[](int idx)
 template<typename T>
 Array<T> &Array<T>::operator!=(const Array & lhs)
 {
-	return (this->_ar != lhs._ar);
+	if (_size != lhs)
+		return 1;
+	for (unsigned int i = 0; i < _size; i++)
+		if (_ar[i] != lhs._ar[i])
+			return 1;
+	return 0;
 }
 
 #endif
