@@ -5,8 +5,8 @@
 #include <cstddef>
 #include <string>
 
-template <typename T, typename F>
-void iter(T *ar, size_t len, F fnct)
+template <typename T, typename F, typename P>
+void iter(T *ar, size_t len, F fnct(P))
 {
 	size_t i = 0;
 	while (i < len)

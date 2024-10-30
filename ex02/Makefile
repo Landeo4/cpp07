@@ -1,4 +1,4 @@
-NAME	=	Iter
+NAME	=	Array
 
 SRCS	=	main.cpp \
 			Array.cpp
