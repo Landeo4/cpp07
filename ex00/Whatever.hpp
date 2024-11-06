@@ -28,6 +28,4 @@ template <typename T> T min(T a, T b){
         return (b);
 }
 
-
-
 #endif

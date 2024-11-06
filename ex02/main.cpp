@@ -6,9 +6,11 @@
 
 int main(int, char**)
 {
+    std::cout << "construction avec valeur: ";
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
+    std::cout << MAX_VAL << " ";
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
@@ -19,7 +21,8 @@ int main(int, char**)
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
-
+    std::cout << "voici size " << numbers._size << std::endl;
+    std::cout << "test 2" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -36,6 +39,7 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << "point de controle ===" << std::endl;
     try
     {
         numbers[MAX_VAL] = 0;
@@ -49,6 +53,11 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
+
+    std::cout << "test 3" << std::endl;
+    int *a = new int();
+    std::cout << a << std::endl;
+
     delete [] mirror;
     return 0;
 }
