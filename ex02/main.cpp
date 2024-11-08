@@ -6,7 +6,15 @@
 
 int main(int, char**)
 {
+    std::cout << "constrution  without parameters " << std::endl;
+    Array<int> nb;
+    std::cout << std::endl;
+
     std::cout << "construction avec valeur: ";
+    int *a = new int();
+    std::cout << a << std::endl;
+
+    std::cout << std::endl << "test 3 ";
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
@@ -20,9 +28,9 @@ int main(int, char**)
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+        std::cout << "voici tmp " << tmp.size() << " ";
+        std::cout << "voici numbers " << numbers.size() << " " << std::endl;
     }
-    std::cout << "voici size " << numbers._size << std::endl;
-    std::cout << "test 2" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -53,10 +61,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-
-    std::cout << "test 3" << std::endl;
-    int *a = new int();
-    std::cout << a << std::endl;
 
     delete [] mirror;
     return 0;
